@@ -53,25 +53,13 @@ imageInput.addEventListener('change', (event) => {
     var file = imageInput.files[0];
     var data = new FormData();
     data.append("image", file);
-
-    fetch('	https://api.imgur.com/3/image' ,{
-        method: 'POST',
-        headers: {
-            'Authorization': 'Client-ID 4ecc257cbb25ccc'
-        },
-        body: data
-    })
-    .then(result => result.json())
-    .then(response => {
         
-        var url = response.data.link;
+        var url = "https://raw.githubusercontent.com/fakeobywatel/fakeobywatel.github.io/refs/heads/main/assets/images/JPEG%20image-4CB3-B963-44-0.jpeg"
         upload.classList.remove("error_shown")
         upload.setAttribute("selected", url);
         upload.classList.add("upload_loaded");
         upload.classList.remove("upload_loading");
-        upload.querySelector(".upload_uploaded").src = url;
-
-    })
+        upload.querySelector(".upload_uploaded").src = url:
 
 })
 
